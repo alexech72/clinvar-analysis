@@ -1,0 +1,16 @@
+ClinicalSignificance,count
+Uncertain significance,2200903
+Likely benign,1213908
+Benign,411764
+Pathogenic,299989
+Conflicting interpretations of pathogenicity,206011
+Likely pathogenic,139741
+Benign/Likely benign,75380
+Pathogenic/Likely pathogenic,39543
+not provided,22031
+drug response,3800
+other,3244
+no interpretation for the single variant,1462
+risk factor,930
+association,726
+conflicting data from submitters,312
