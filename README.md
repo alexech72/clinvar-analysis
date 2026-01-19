@@ -1,38 +1,48 @@
 # ClinVar Variant Analysis
 
-This project performs exploratory analysis on the ClinVar database using Python and BioBricks.
-
 ## Overview
-ClinVar is a public archive of reports on the relationships between human genetic variants and phenotypes.  
-This analysis loads over 4.6 million variants and examines clinical significance trends and conflicts.
+This project performs an exploratory **biomedical informatics analysis** of ClinVar genetic variant data using Python and BioBricks. The goal is to examine how genetic variants are classified clinically and to identify genes with a high number of conflicting clinical interpretations.
 
-## Analysis Performed
-- Loaded the full ClinVar variant dataset using BioBricks
-- Counted variants by clinical significance category
+ClinVar is a public database that aggregates information about genomic variation and its relationship to human health.
+
+## Why This Matters (Informatics Context)
+Conflicting variant interpretations in ClinVar can affect clinical decision-making, genetic counseling, and downstream research. Quantifying where and how these conflicts occur helps identify genes and regions where evidence is limited, evolving, or inconsistent.
+
+## Dataset
+- Source: ClinVar (accessed via BioBricks)
+- Total variants analyzed: ~4.6 million
+- Data format: Parquet
+
+## Methods
+- Loaded ClinVar variant tables using BioBricks
+- Performed data exploration using pandas
+- Aggregated variants by clinical significance
 - Identified variants with conflicting interpretations
-- Ranked genes by number of conflicting submissions
-- Exported summary statistics to CSV
+- Ranked genes by number of conflicting interpretations
 
 ## Key Findings
-- Most variants are labeled **Uncertain Significance**
-- Over **200,000 variants** have conflicting interpretations
-- Genes with the highest conflicts include:
-  - BRCA2
-  - TTN
-  - BRCA1
-  - TSC2
-  - MSH2
-
-## Tools & Technologies
-- Python
-- Pandas
-- BioBricks
-- ClinVar
+- The most common classification was **Uncertain significance**
+- Over **200,000 variants** had conflicting clinical interpretations
+- Genes such as **BRCA2, BRCA1, and TTN** showed the highest number of conflicts
+- These results highlight ongoing challenges in clinical variant interpretation
 
 ## Files
-- `clinvar_analysis.py` — main analysis script
-- `clinical_significance_counts.csv` — output data
+- `clinvar_analysis.py` — Python script used for loading and analyzing ClinVar data
+- `clinical_significance_counts.csv` — Aggregated counts by clinical significance
+- `top_conflicting_genes.csv` — Genes ranked by number of conflicting interpretations
 
-## Why This Matters
-Conflicting interpretations of genetic variants are a major challenge in clinical genomics and precision medicine.  
-This analysis highlights genes and variants where disagreement is most common.
+## Reproducibility and Data Management
+ClinVar data is accessed via BioBricks as versioned Parquet assets rather than manual downloads. This approach supports reproducible analysis, consistent data access across environments, and mirrors real-world biomedical informatics workflows.
+
+## Technologies Used
+- Python
+- pandas
+- BioBricks
+- Parquet datasets
+
+## How to Run
+1. Install dependencies:
+   ```bash
+   pip install pandas biobricks
+
+
