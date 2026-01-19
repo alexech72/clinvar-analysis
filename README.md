@@ -41,8 +41,13 @@ ClinVar data is accessed via BioBricks as versioned Parquet assets rather than m
 - Parquet datasets
 
 ## How to Run
-1. Install dependencies:
-   ```bash
-   pip install pandas biobricks
 
+1. Install dependencies  
+pip install pandas biobricks
+
+2. Install ClinVar data using the BioBricks CLI  
+biobricks install clinvar
+
+3. Run the analysis script  
+python clinvar_analysis.py
 
